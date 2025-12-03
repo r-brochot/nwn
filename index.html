@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neverwinter Nights : Le Codex de l'Aventure</title>
-    <!-- Chargement de deux polices d'ambiance : Cinzel pour l'épique, MedievalSharp pour le gothique -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap" rel="stylesheet">
+    <!-- On garde les polices pour le sous-titre et les liens -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Déclaration des variables de couleur pour un thème sombre/fantastique */
+        /* Déclaration des variables de couleur basées sur l'image (Bleu profond et Or/Orange) */
         :root {
-            --bg-dark: #11100f; /* Presque noir, profond */
-            --primary-color: #ffd700; /* Or vif, pour un impact maximum sur le titre */
-            --secondary-color: #8b0000; /* Rouge sang/magie */
-            --text-color: #f3f4f6; /* Texte clair */
-            --card-bg: #374151;
+            --bg-dark: #181A20;       /* Très deep blue-black */
+            --primary-color: #DDAA00; /* Rich Gold/Orange Accent */
+            --secondary-color: #5B7A8A; /* Muted blue-steel color */
+            --text-color: #EFEFF4;    /* Off-white */
+            --card-bg: #282C36;       /* Dark card color */
         }
 
         body {
@@ -34,27 +34,36 @@
             max-width: 900px;
             width: 90%;
             padding: 40px 20px;
-            background-color: rgba(31, 27, 20, 0.9); /* Semi-transparent sur le fond pour lire */
+            background-color: rgba(31, 27, 20, 0.9); 
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
         }
 
         header {
             margin-bottom: 40px;
-            /* Encadrement et Ligne de Titre */
+            /* Encadrement de Titre */
             border: 3px solid var(--primary-color);
             border-width: 3px 0;
             padding: 15px 0;
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
         }
 
-        h1 {
-            font-family: 'MedievalSharp', cursive; /* Nouvelle police Gothique */
-            font-size: 3.5rem;
-            font-weight: 400;
-            color: var(--primary-color);
-            text-shadow: 0 0 15px var(--primary-color); /* Effet lumineux */
-            margin: 0 0 5px 0;
-            letter-spacing: 5px; /* Écartement pour l'effet "Titre épique" */
-            line-height: 1;
+        /* STYLE POUR L'IMAGE DE TITRE */
+        .title-image {
+            max-width: 300px; /* Limite la taille de l'image sur grand écran */
+            max-height: 200px; 
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            box-shadow: 0 0 15px rgba(221, 170, 0, 0.5); /* Ajoute une lueur dorée */
+            border-radius: 5px;
+        }
+
+        /* ANCIENS STYLES H1 ET H2 MIS À JOUR */
+        h1 { /* Ce style est désactivé, l'image le remplace */
+            display: none; 
         }
 
         h2 {
@@ -62,7 +71,7 @@
             font-size: 1.5rem;
             font-style: italic;
             color: #d1d5db;
-            margin: 0;
+            margin: 10px 0 0 0; 
         }
         
         p {
@@ -98,7 +107,7 @@
             transform: translateY(-2px);
             background-color: #4b5563;
             box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.7);
-            color: var(--text-color); /* Change la couleur du texte au survol */
+            color: var(--text-color); 
         }
 
         footer {
@@ -110,12 +119,11 @@
         
         /* Adaptation mobile */
         @media (max-width: 600px) {
-            h1 {
-                font-size: 2.5rem;
-                letter-spacing: 3px;
-            }
             h2 {
                 font-size: 1.2rem;
+            }
+            .title-image {
+                max-width: 200px; /* Réduit l'image sur mobile */
             }
             .link-card {
                 width: 100%;
@@ -131,7 +139,9 @@
 
     <div class="container">
         <header>
-            <h1>Neverwinter Nights</h1>
+            <!-- L'IMAGE DE COUVERTURE DU JEU EST INTÉGRÉE ICI -->
+            <img src="https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_NeverwinterNightsEnhancedEdition.jpg" class="title-image" alt="Neverwinter Nights Enhanced Edition Logo">
+            
             <h2>Le Codex de l'Aventure</h2>
         </header>
 
