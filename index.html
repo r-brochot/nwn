@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet NWN - Lore & Module</title>
+    <title>Neverwinter Nights : Le Codex de l'Aventure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Déclaration des variables de couleur pour un thème sombre/fantastique */
         :root {
-            --bg-color: #1f2937; /* Gris foncé, pour l'ambiance jeu */
-            --primary-color: #ef4444; /* Rouge/Gris pour un thème fantastique */
-            --text-color: #f3f4f6;
-            --card-bg: #374151;
+            --bg-dark: #1f1b14; /* Très sombre, presque noir */
+            --paper-color: #f7e7c8; /* Couleur parchemin clair */
+            --primary-color: #b8860b; /* Or sombre/vieux bronze pour l'accent */
+            --secondary-color: #a83232; /* Rouge sombre pour les avertissements */
+            --text-color: #f3f4f6; /* Texte clair */
+            --header-bg: #2d281e;
         }
 
         body {
-            font-family: Georgia, 'Times New Roman', Times, serif; /* Police plus "médiévale" */
-            background-color: var(--bg-color);
+            /* Application d'une texture discrète pour le fond */
+            background-color: var(--bg-dark);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><filter id="noise" x="0" y="0"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch" result="t"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100" height="100" style="filter: url(#noise)"></rect></svg>');
+            font-family: 'Roboto', sans-serif;
             color: var(--text-color);
             margin: 0;
             padding: 0;
@@ -28,26 +34,39 @@
             max-width: 900px;
             width: 90%;
             padding: 40px 20px;
-            text-align: center;
+            background-color: rgba(31, 27, 20, 0.85); /* Semi-transparent sur le fond */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
         }
 
         header {
             margin-bottom: 40px;
+            border-bottom: 3px double var(--primary-color);
+            padding-bottom: 15px;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-family: 'Cinzel', serif; /* Police épique pour le titre */
+            font-size: 2.8rem;
             font-weight: 700;
             color: var(--primary-color);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 10px;
+            text-shadow: 1px 1px 10px rgba(184, 134, 11, 0.6);
+            margin: 0 0 5px 0;
+            letter-spacing: 2px;
         }
 
         h2 {
+            font-family: 'Cinzel', serif;
             font-size: 1.2rem;
             font-style: italic;
             color: #d1d5db;
-            margin-top: 0;
+            margin: 0;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 25px;
         }
 
         .link-grid {
@@ -55,26 +74,27 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            margin-top: 30px;
         }
 
         .link-card {
+            /* Simuler un vieux parchemin/cuir */
             background-color: var(--card-bg);
-            border: 1px solid var(--primary-color);
-            border-radius: 8px;
+            border: 2px solid var(--primary-color);
+            border-radius: 4px;
             padding: 15px 25px;
             text-decoration: none;
             color: var(--text-color);
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+            font-family: 'Cinzel', serif;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 400;
         }
 
         .link-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-            background-color: #4b5563;
+            transform: translateY(-2px);
+            background-color: #4b5563; /* Lighter on hover */
+            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.7);
         }
 
         footer {
@@ -83,13 +103,27 @@
             font-size: 0.75rem;
             color: #9ca3af;
         }
+        
+        /* Adaptation mobile */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .link-card {
+                width: 100%;
+                display: block;
+            }
+            .container {
+                 padding: 20px 10px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <h1>Neverwinter Nights : Projet Communautaire</h1>
+            <h1>Neverwinter Nights</h1>
             <h2>Le Codex de l'Aventure</h2>
         </header>
 
